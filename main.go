@@ -34,5 +34,9 @@ func main() {
 		})
 	})
 
+	r.GET("/ping", func(ctx *gin.Context) {
+		ctx.String(http.StatusOK, "pong")
+	})
+
 	r.Run(":8080")
 }
