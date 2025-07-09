@@ -16,5 +16,23 @@ func main() {
 		})
 	})
 
+	r.GET("/users", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"success": true,
+			"message": "List all users",
+			"results": []map[string]string{
+				{
+					"name": "John",
+				},
+				{
+					"name": "Ed",
+				},
+				{
+					"name": "Jane",
+				},
+			},
+		})
+	})
+
 	r.Run(":8080")
 }
