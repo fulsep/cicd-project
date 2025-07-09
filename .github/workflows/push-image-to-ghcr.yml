@@ -7,7 +7,6 @@ jobs:
       steps:
         - name: Checkout code
           uses: actions/checkout@v4
-        - run: go build -o backend-app main.go
         - name: Build and publish a Docker image for ${{ github.repository }}
           uses: macbre/push-to-ghcr@master
           with:
